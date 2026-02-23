@@ -1,0 +1,142 @@
+[
+  {
+    "id": 158,
+    "prompt": "Valence: 2.10, Arousal: 3.60 - anxious",
+    "arousal": 3.6,
+    "valence": 2.1,
+    "emotion_label": "anxious"
+  },
+  {
+    "id": 253,
+    "prompt": "Valence: 6.60, Arousal: 2.50 - affectionate",
+    "arousal": 2.5,
+    "valence": 6.6,
+    "emotion_label": "affectionate"
+  },
+  {
+    "id": 360,
+    "prompt": "Valence: 2.50, Arousal: 5.50 - rage",
+    "arousal": 5.5,
+    "valence": 2.5,
+    "emotion_label": "rage"
+  },
+  {
+    "id": 379,
+    "prompt": "Valence: 1.90, Arousal: 2.90 - frustrated",
+    "arousal": 2.9,
+    "valence": 1.9,
+    "emotion_label": "frustrated"
+  },
+  {
+    "id": 456,
+    "prompt": "Valence: 6.10, Arousal: 2.30 - affectionate",
+    "arousal": 2.3,
+    "valence": 6.1,
+    "emotion_label": "affectionate"
+  },
+  {
+    "id": 685,
+    "prompt": "Valence: 4.50, Arousal: 3.60 - joyful",
+    "arousal": 3.6,
+    "valence": 4.5,
+    "emotion_label": "joyful"
+  },
+  {
+    "id": 739,
+    "prompt": "Valence: 6.20, Arousal: 6.90 - thrilled",
+    "arousal": 6.9,
+    "valence": 6.2,
+    "emotion_label": "thrilled"
+  },
+  {
+    "id": 831,
+    "prompt": "Valence: 5.20, Arousal: 6.20 - thrilled",
+    "arousal": 6.2,
+    "valence": 5.2,
+    "emotion_label": "thrilled"
+  },
+  {
+    "id": 833,
+    "prompt": "Valence: 5.00, Arousal: 5.80 - thrilled",
+    "arousal": 5.8,
+    "valence": 5.0,
+    "emotion_label": "thrilled"
+  },
+  {
+    "id": 1021,
+    "prompt": "Valence: 6.20, Arousal: 4.80 - thrilled",
+    "arousal": 4.8,
+    "valence": 6.2,
+    "emotion_label": "thrilled"
+  },
+  {
+    "id": 1034,
+    "prompt": "Valence: 3.30, Arousal: 2.80 - moved",
+    "arousal": 2.8,
+    "valence": 3.3,
+    "emotion_label": "moved"
+  },
+  {
+    "id": 1107,
+    "prompt": "Valence: 3.00, Arousal: 3.20 - stirred",
+    "arousal": 3.2,
+    "valence": 3.0,
+    "emotion_label": "stirred"
+  },
+  {
+    "id": 1133,
+    "prompt": "Valence: 5.00, Arousal: 2.40 - affectionate",
+    "arousal": 2.4,
+    "valence": 5.0,
+    "emotion_label": "affectionate"
+  },
+  {
+    "id": 1182,
+    "prompt": "Valence: 2.70, Arousal: 2.20 - melancholy",
+    "arousal": 2.2,
+    "valence": 2.7,
+    "emotion_label": "melancholy"
+  },
+  {
+    "id": 1373,
+    "prompt": "Valence: 6.60, Arousal: 5.70 - thrilled",
+    "arousal": 5.7,
+    "valence": 6.6,
+    "emotion_label": "thrilled"
+  },
+  {
+    "id": 1539,
+    "prompt": "Valence: 4.40, Arousal: 4.70 - triumphant",
+    "arousal": 4.7,
+    "valence": 4.4,
+    "emotion_label": "triumphant"
+  },
+  {
+    "id": 1633,
+    "prompt": "Valence: 6.50, Arousal: 6.30 - thrilled",
+    "arousal": 6.3,
+    "valence": 6.5,
+    "emotion_label": "thrilled"
+  },
+  {
+    "id": 1639,
+    "prompt": "Valence: 5.30, Arousal: 5.30 - thrilled",
+    "arousal": 5.3,
+    "valence": 5.3,
+    "emotion_label": "thrilled"
+  },
+  {
+    "id": 1932,
+    "prompt": "Valence: 4.80, Arousal: 6.00 - thrilled",
+    "arousal": 6.0,
+    "valence": 4.8,
+    "emotion_label": "thrilled"
+  },
+  {
+    "id": 1994,
+    "prompt": "Valence: 3.80, Arousal: 3.50 - elated",
+    "arousal": 3.5,
+    "valence": 3.8,
+    "emotion_label": "elated"
+  }
+]
