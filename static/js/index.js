@@ -217,7 +217,7 @@ function setupMusicComparisonTable() {
         row.appendChild(promptCell);
 
         // Audio player columns for each system
-        const systems = ['gt', 'emotion_text_prompting', 'ce_finetuning', 'laragen'];
+        const systems = ['gt', 'emotion_text_prompting', 'laragen'];
         systems.forEach(system => {
             const audioCell = document.createElement('td');
 
