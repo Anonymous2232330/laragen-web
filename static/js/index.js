@@ -212,7 +212,7 @@ function setupMusicComparisonTable() {
         // Prompt column
         const promptCell = document.createElement('td');
         const emotionTerm = findClosestEmotionTerm(item.valence, item.arousal);
-        promptCell.textContent = `V: ${item.valence.toFixed(2)}, A: ${item.arousal.toFixed(2)} - ${emotionTerm}`;
+        promptCell.textContent = `(${item.valence.toFixed(1)}, ${item.arousal.toFixed(1)}) - ${emotionTerm}`;
         promptCell.className = 'prompt-cell';
         row.appendChild(promptCell);
 

@@ -562,8 +562,8 @@ a:focus {
   min-width: 1000px;
 }
 
-.music-comparison-table thead th {
-  background: #000000;
+.table.music-comparison-table thead th {
+  background: #333333;
   color: white;
   font-weight: 600;
   border: none;
@@ -584,6 +584,10 @@ a:focus {
 .prompt-cell {
   max-width: 250px;
   word-wrap: break-word;
+}
+
+.table.music-comparison-table td.prompt-cell {
+  text-align: center;
 }
 
 .music-comparison-table audio {
