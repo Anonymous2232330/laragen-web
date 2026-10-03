@@ -84,123 +84,20 @@ function setupVideoCarouselAutoplay() {
     });
 }
 
-// Emotion terms mapping
-const emotionTerms = {
-  "arousal_1_valence_1": "dreary",
-  "arousal_1_valence_2": "gloom",
-  "arousal_1_valence_3": "bored",
-  "arousal_1_valence_4": "fatigued",
-  "arousal_1_valence_5": "sleepy",
-  "arousal_1_valence_6": "calm",
-  "arousal_1_valence_7": "relaxed",
-  "arousal_1_valence_8": "peaceful",
-  "arousal_1_valence_9": "serene",
-  "arousal_2_valence_1": "miserable",
-  "arousal_2_valence_2": "sad",
-  "arousal_2_valence_3": "depressed",
-  "arousal_2_valence_4": "lonely",
-  "arousal_2_valence_5": "pensive",
-  "arousal_2_valence_6": "quiet",
-  "arousal_2_valence_7": "content",
-  "arousal_2_valence_8": "tranquil",
-  "arousal_2_valence_9": "at_ease",
-  "arousal_3_valence_1": "dejected",
-  "arousal_3_valence_2": "unhappy",
-  "arousal_3_valence_3": "sorrowful",
-  "arousal_3_valence_4": "melancholy",
-  "arousal_3_valence_5": "thoughtful",
-  "arousal_3_valence_6": "soothed",
-  "arousal_3_valence_7": "satisfied",
-  "arousal_3_valence_8": "gentle",
-  "arousal_3_valence_9": "loving",
-  "arousal_4_valence_1": "troubled",
-  "arousal_4_valence_2": "displeased",
-  "arousal_4_valence_3": "disappointed",
-  "arousal_4_valence_4": "yearning",
-  "arousal_4_valence_5": "neutral",
-  "arousal_4_valence_6": "pleasant",
-  "arousal_4_valence_7": "pleased",
-  "arousal_4_valence_8": "hopeful",
-  "arousal_4_valence_9": "affectionate",
-  "arousal_5_valence_1": "distressed",
-  "arousal_5_valence_2": "agitated",
-  "arousal_5_valence_3": "frustrated",
-  "arousal_5_valence_4": "tense",
-  "arousal_5_valence_5": "stirred",
-  "arousal_5_valence_6": "moved",
-  "arousal_5_valence_7": "touched",
-  "arousal_5_valence_8": "inspired",
-  "arousal_5_valence_9": "passionate",
-  "arousal_6_valence_1": "annoyed",
-  "arousal_6_valence_2": "irritated",
-  "arousal_6_valence_3": "anxious",
-  "arousal_6_valence_4": "nervous",
-  "arousal_6_valence_5": "surprised",
-  "arousal_6_valence_6": "impressed",
-  "arousal_6_valence_7": "elated",
-  "arousal_6_valence_8": "joyful",
-  "arousal_6_valence_9": "romantic",
-  "arousal_7_valence_1": "afraid",
-  "arousal_7_valence_2": "fearful",
-  "arousal_7_valence_3": "angry",
-  "arousal_7_valence_4": "aroused",
-  "arousal_7_valence_5": "astonished",
-  "arousal_7_valence_6": "energetic",
-  "arousal_7_valence_7": "happy",
-  "arousal_7_valence_8": "delighted",
-  "arousal_7_valence_9": "excited",
-  "arousal_8_valence_1": "scared",
-  "arousal_8_valence_2": "hostile",
-  "arousal_8_valence_3": "enraged",
-  "arousal_8_valence_4": "shocked",
-  "arousal_8_valence_5": "adventurous",
-  "arousal_8_valence_6": "lively",
-  "arousal_8_valence_7": "playful",
-  "arousal_8_valence_8": "triumphant",
-  "arousal_8_valence_9": "ecstatic",
-  "arousal_9_valence_1": "terrified",
-  "arousal_9_valence_2": "panicked",
-  "arousal_9_valence_3": "furious",
-  "arousal_9_valence_4": "rage",
-  "arousal_9_valence_5": "wild",
-  "arousal_9_valence_6": "active",
-  "arousal_9_valence_7": "exuberant",
-  "arousal_9_valence_8": "euphoric",
-  "arousal_9_valence_9": "thrilled"
-};
-
-// Function to find closest emotion term based on VA values
-function findClosestEmotionTerm(valence, arousal) {
-  // Convert VA values to grid indices (1-9 scale)
-  // Assuming VA values range from 1-9, but our data might have different ranges
-  // Let's assume our VA values are on a 1-9 scale
-  const v = Math.round(valence);
-  const a = Math.round(arousal);
-
-  // Clamp to valid range
-  const clampedV = Math.max(1, Math.min(9, v));
-  const clampedA = Math.max(1, Math.min(9, a));
-
-  const key = `arousal_${clampedA}_valence_${clampedV}`;
-  return emotionTerms[key] || "unknown";
-}
-
 // Music comparison table functionality
 function setupMusicComparisonTable() {
+    // User-selected samples; labels are the actual ANEW conditioning words.
     const musicData = [
-        // {id: 360, valence: 2.50, arousal: 5.50},
-        {id: 379, valence: 1.90, arousal: 2.90},
-        {id: 158, valence: 2.10, arousal: 3.60},
-        {id: 685, valence: 4.50, arousal: 3.60},
-        {id: 833, valence: 5.00, arousal: 5.80},
-        {id: 1034, valence: 3.30, arousal: 2.80},
-        {id: 1133, valence: 5.00, arousal: 2.40},
-        // {id: 1182, valence: 2.70, arousal: 2.20},
-        {id: 1373, valence: 6.60, arousal: 5.70},
-        {id: 1539, valence: 4.40, arousal: 4.70},
-        {id: 1994, valence: 3.80, arousal: 3.50}, 
-        {id: 739, valence:6.2, arousal:6.9},
-        // {id: 1633, valence:6.5, arousal:6.3},
+        {"id": "test0351_seed204351", "candidate_id": "C04", "valence": 6.2, "arousal": 2.1, "emotion_label": "relaxed"},
+        {"id": "test0367_seed204367", "candidate_id": "C06", "valence": 5.1, "arousal": 2.7, "emotion_label": "paper"},
+        {"id": "test0049_seed204049", "candidate_id": "C07", "valence": 2.2, "arousal": 3.9, "emotion_label": "discomfort"},
+        {"id": "test0405_seed204405", "candidate_id": "C08", "valence": 7.9, "arousal": 4.1, "emotion_label": "snuggle"},
+        {"id": "test0181_seed204181", "candidate_id": "C09", "valence": 5.7, "arousal": 4.2, "emotion_label": "book"},
+        {"id": "test0605_seed204605", "candidate_id": "C10", "valence": 3.8, "arousal": 4.3, "emotion_label": "detached"},
+        {"id": "test0139_seed204139", "candidate_id": "C13", "valence": 5.9, "arousal": 6.1, "emotion_label": "curious"},
+        {"id": "test0189_seed204189", "candidate_id": "C14", "valence": 8.1, "arousal": 6.2, "emotion_label": "terrific"},
+        {"id": "test0095_seed204095", "candidate_id": "C16", "valence": 1.9, "arousal": 7.7, "emotion_label": "nightmare"},
+        {"id": "test0419_seed204419", "candidate_id": "C20", "valence": 1.1, "arousal": 8.8, "emotion_label": "terrified"}
     ];
 
     const tableBody = document.getElementById('music-table-body');
@@ -208,11 +105,11 @@ function setupMusicComparisonTable() {
 
     musicData.forEach(item => {
         const row = document.createElement('tr');
+        row.dataset.candidateId = item.candidate_id;
 
         // Prompt column
         const promptCell = document.createElement('td');
-        const emotionTerm = findClosestEmotionTerm(item.valence, item.arousal);
-        promptCell.textContent = `(${item.valence.toFixed(1)}, ${item.arousal.toFixed(1)}) - ${emotionTerm}`;
+        promptCell.textContent = `(${item.valence.toFixed(1)}, ${item.arousal.toFixed(1)}) - ${item.emotion_label}`;
         promptCell.className = 'prompt-cell';
         row.appendChild(promptCell);
 
