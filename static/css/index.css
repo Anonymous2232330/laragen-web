@@ -591,6 +591,8 @@ a:focus {
 }
 
 .music-comparison-table audio {
+  display: block;
+  margin: 0 auto;
   border-radius: var(--border-radius);
   background: var(--background-secondary);
   min-width: 200px;

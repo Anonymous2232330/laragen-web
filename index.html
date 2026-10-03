@@ -86,7 +86,7 @@
   
   <!-- Critical CSS - Load synchronously -->
   <link rel="stylesheet" href="static/css/bulma.min.css">
-  <link rel="stylesheet" href="static/css/index.css?v=20260914-table2">
+  <link rel="stylesheet" href="static/css/index.css?v=20261003-centered">
   
   <!-- Non-critical CSS - Load asynchronously -->
   <link rel="preload" href="static/css/bulma-carousel.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -398,7 +398,7 @@
       <h2 class="title is-3 has-text-centered">Music Generation Comparison</h2>
       <div class="content has-text-justified">
         <p>
-          Each row uses a ground-truth valence–arousal (V, A) pair from the MUSE-VA test set. LARA-Gen takes the continuous V, A values as input, while the ANEW baseline uses the nearest word from the <a href="https://pdodds.w3.uvm.edu/teaching/courses/2009-08UVM-300/docs/others/everything/bradley1999a.pdf" target="_blank" style="color: blue; text-decoration: underline;">ANEW</a> lexicon, shown in the first column. The ANEW baseline is fine-tuned with cross-entropy loss only.
+          Each row uses a ground-truth valence–arousal (V, A) pair from the MUSE-VA test set. LARA-Gen takes the continuous V, A values as input, while the ANEW baseline uses the nearest word from the <a href="https://pdodds.w3.uvm.edu/teaching/courses/2009-08UVM-300/docs/others/everything/bradley1999a.pdf" target="_blank" style="color: blue; text-decoration: underline;">ANEW</a> lexicon, shown in the first column.
         </p>
       </div>
 
@@ -408,7 +408,7 @@
             <tr>
               <th>Emotional Prompt (V, A)</th>
               <th>Ground Truth</th>
-              <th>ANEW (CE-only)</th>
+              <th>ANEW</th>
               <th>LARA-Gen</th>
             </tr>
           </thead>
