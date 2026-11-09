@@ -82,6 +82,25 @@ body {
     margin: 8px 4px;
 }
 
+.publication-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    padding: 0.5rem 0;
+}
+
+.publication-links .link-block {
+    display: inline-flex;
+    margin: 0;
+}
+
+.publication-links .link-block a {
+    width: auto;
+    margin: 0;
+}
+
 .dnerf {
   font-variant: small-caps;
 }
