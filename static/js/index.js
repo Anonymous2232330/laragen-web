@@ -107,30 +107,39 @@ function setupMusicComparisonTable() {
         const row = document.createElement('tr');
         row.dataset.candidateId = item.candidate_id;
 
-        // Prompt column
-        const promptCell = document.createElement('td');
-        promptCell.textContent = `(${item.valence.toFixed(1)}, ${item.arousal.toFixed(1)}) - ${item.emotion_label}`;
-        promptCell.className = 'prompt-cell';
-        row.appendChild(promptCell);
-
-        // Audio player columns for each system
-        const systems = ['gt', 'emotion_text_prompting', 'laragen'];
+        // Keep each model's conditioning next to its corresponding audio.
+        const systems = ['gt', 'laragen', 'emotion_text_prompting'];
+        const systemLabels = {
+            gt: 'Ground Truth',
+            laragen: 'LARA-Gen',
+            emotion_text_prompting: 'Emotion Text Fine-tuning'
+        };
         systems.forEach(system => {
             const audioCell = document.createElement('td');
+            audioCell.dataset.system = system;
+            const sample = document.createElement('div');
+            sample.className = 'audio-sample';
 
             const audioPlayer = document.createElement('audio');
             audioPlayer.controls = true;
             audioPlayer.preload = 'metadata';
-            audioPlayer.style.width = '100%';
-            audioPlayer.style.minWidth = '200px';
-            audioPlayer.style.maxWidth = '250px';
+            audioPlayer.setAttribute('aria-label', `${systemLabels[system]}, V: ${item.valence.toFixed(1)}, A: ${item.arousal.toFixed(1)}`);
 
             const source = document.createElement('source');
             source.src = `./static/mp3s/${system}/${item.id}.mp3`;
             source.type = 'audio/mpeg';
 
             audioPlayer.appendChild(source);
-            audioCell.appendChild(audioPlayer);
+            sample.appendChild(audioPlayer);
+            if (system !== 'gt') {
+                const condition = document.createElement('p');
+                condition.className = 'sample-condition';
+                condition.textContent = system === 'laragen'
+                    ? `V: ${item.valence.toFixed(1)}, A: ${item.arousal.toFixed(1)}`
+                    : `Emotion: ${item.emotion_label}`;
+                sample.appendChild(condition);
+            }
+            audioCell.appendChild(sample);
             row.appendChild(audioCell);
         });
 

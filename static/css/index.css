@@ -573,26 +573,39 @@ a:focus {
 
 
 /* Music Comparison Table Styles */
-.music-comparison-table {
+.music-comparison-container {
+  max-width: 1100px;
+  margin: 2rem auto;
+  padding: 1rem;
+  overflow-x: auto;
   border-radius: var(--border-radius);
-  overflow: hidden;
-  box-shadow: var(--shadow-md);
-  margin: 2rem 0;
-  min-width: 1000px;
+  box-shadow: var(--shadow-sm);
+  background: var(--background-primary);
+  -webkit-overflow-scrolling: touch;
+}
+
+.table.music-comparison-table {
+  width: 100%;
+  min-width: 840px;
+  margin: 0;
+  table-layout: fixed;
 }
 
 .table.music-comparison-table thead th {
+  width: 33.333%;
   background: #333333;
   color: white;
   font-weight: 600;
   border: none;
   padding: 1rem 0.75rem;
   text-align: center;
+  vertical-align: middle;
 }
 
-.music-comparison-table td {
-  padding: 0.75rem;
-  vertical-align: middle;
+.table.music-comparison-table td {
+  padding: 1rem 0.75rem;
+  text-align: center;
+  vertical-align: top;
   border-bottom: 1px solid var(--border-color);
 }
 
@@ -600,52 +613,57 @@ a:focus {
   background: var(--background-accent);
 }
 
-.prompt-cell {
-  max-width: 250px;
-  word-wrap: break-word;
-}
-
-.table.music-comparison-table td.prompt-cell {
-  text-align: center;
+.audio-sample {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .music-comparison-table audio {
   display: block;
+  width: 100%;
+  max-width: 250px;
   margin: 0 auto;
   border-radius: var(--border-radius);
   background: var(--background-secondary);
-  min-width: 200px;
-  max-width: 250px;
+}
+
+.sample-condition {
+  margin: 0;
+  max-width: 100%;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  text-align: center;
+  overflow-wrap: anywhere;
+}
+
+/* Keep Chromium's native controls complete after horizontal table scrolling. */
+.music-comparison-table audio::-webkit-media-controls,
+.music-comparison-table audio::-webkit-media-controls-enclosure,
+.music-comparison-table audio::-webkit-media-controls-panel {
+  width: 250px !important;
 }
 
 .music-comparison-table audio::-webkit-media-controls-panel {
   background: var(--background-secondary);
 }
 
-/* Responsive table */
-.table-container {
-  overflow-x: auto;
-  border-radius: var(--border-radius);
-  box-shadow: var(--shadow-sm);
-  background: var(--background-primary);
-  padding: 1rem;
-}
-
-@media screen and (max-width: 1024px) {
-  .music-comparison-table {
-    min-width: 900px;
-  }
-}
-
 @media screen and (max-width: 768px) {
-  .music-comparison-table th,
-  .music-comparison-table td {
-    padding: 0.5rem;
-    font-size: 0.875rem;
+  /* The floating shortcut must not cover audio controls in the narrow table. */
+  .scroll-to-top {
+    display: none;
   }
 
-  .prompt-cell {
-    max-width: 200px;
+  .music-comparison-container {
+    padding: 0.5rem;
+  }
+
+  .table.music-comparison-table th,
+  .table.music-comparison-table td {
+    padding: 0.75rem 0.5rem;
+    font-size: 0.875rem;
   }
 }
 
