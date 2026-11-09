@@ -135,8 +135,8 @@ function setupMusicComparisonTable() {
                 const condition = document.createElement('p');
                 condition.className = 'sample-condition';
                 condition.textContent = system === 'laragen'
-                    ? `V: ${item.valence.toFixed(1)}, A: ${item.arousal.toFixed(1)}`
-                    : `Emotion: ${item.emotion_label}`;
+                    ? `(V, A) = (${item.valence.toFixed(1)}, ${item.arousal.toFixed(1)})`
+                    : item.emotion_label;
                 sample.appendChild(condition);
             }
             audioCell.appendChild(sample);
